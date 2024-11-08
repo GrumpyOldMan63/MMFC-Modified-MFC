@@ -1,14 +1,11 @@
-package com
+package com.patson
 
 import akka.actor.ActorSystem
-//import akka.stream.FlowMaterializer
-import scala.concurrent.ExecutionContext
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
-package object patson {
-  implicit val actorSystem = ActorSystem("rabbit-akka-stream", None, None, Some(ExecutionContext.fromExecutorService(Executors.newCachedThreadPool())))
+import akka.stream.ActorMaterializer
+import scala.io.Codec
 
-  import actorSystem.dispatcher
-
-  //implicit val materializer = FlowMaterializer()
+package object init {
+  implicit val actorSystem = ActorSystem("init-stream")
+  implicit val materializer = ActorMaterializer()
+  implicit val codec = Codec.UTF8
 }
