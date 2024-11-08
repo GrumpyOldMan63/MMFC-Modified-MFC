@@ -1,11 +1,6 @@
 package com.patson
 
-import akka.actor.ActorSystem
-import akka.stream.ActorMaterializer
-import scala.io.Codec
-
-package object init {
-  implicit val actorSystem = ActorSystem("init-stream")
-  implicit val materializer = ActorMaterializer()
-  implicit val codec = Codec.UTF8
+package object stream {
+  val REMOTE_SYSTEM_NAME = "websocketActorSystem"
+  val BRIDGE_ACTOR_NAME = "bridgeActor"
 }
