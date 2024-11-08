@@ -1,13 +1,3 @@
-/bin/
-/.settings/
-/target/
-/.cache-main
-/.cache-tests
-/.classpath
-/.project
-/.idea
-/logs
-.metals/
-.vscode/
-.bsp/
-.scala-build/
+/default.db
+/c-default.db
+/default - Copy.db
