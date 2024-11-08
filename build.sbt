@@ -1,34 +1,24 @@
-name := """airline-web"""
+name := """airline-data"""
 
-version := "1.0-SNAPSHOT"
+version := "2.1"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
-
-scalaVersion := "2.13.0"
+scalaVersion := "2.13.11"
 
 libraryDependencies ++= Seq(
-  jdbc,
-  ws,
-  guice,
-  specs2 % Test,
-  "com.typesafe.akka" %% "akka-remote" % "2.5.32",
-  "default" %% "airline-data" % "2.1",
-  "com.google.api-client" % "google-api-client" % "1.30.4",
-  "com.google.oauth-client" % "google-oauth-client-jetty" % "1.36.0",
-  "com.google.apis" % "google-api-services-gmail" % "v1-rev103-1.25.0",
-  "com.google.photos.library" % "google-photos-library-client" % "1.7.3",
-  "javax.mail" % "javax.mail-api" % "1.6.2",
-  "com.sun.mail" % "javax.mail" % "1.6.2"
-)
+  "org.scalatest" %% "scalatest" % "3.0.8" % "test",
+  "org.scala-lang.modules" %% "scala-parallel-collections" % "0.2.0",
+  //"org.xerial" % "sqlite-jdbc" % "3.8.11.2",
+  "mysql" % "mysql-connector-java" % "5.1.49",
+  "com.appoptics.agent.java" % "appoptics-sdk" % "6.13.0",
+  "com.typesafe.akka" %% "akka-actor" % "2.5.26",
+  "com.typesafe.akka"          %%  "akka-stream" % "2.5.26",
+  "com.typesafe.akka" %% "akka-remote" % "2.5.26",
+  "com.typesafe.akka" %% "akka-testkit" % "2.5.26" % Test,
+  "com.typesafe.play"          %%  "play-json" % "2.7.4",
+  "org.apache.commons" % "commons-math3" % "3.6.1",
+  "com.mchange" % "c3p0" % "0.9.5.5",
+  "com.google.guava" % "guava" % "22.0")
 
-// https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-client
-libraryDependencies += "org.elasticsearch.client" % "elasticsearch-rest-high-level-client" % "7.17.21"
-
-
-
-
-resolvers += "scalaz-bintray" at "https://dl.bintray.com/scalaz/releases"
-
-// Play provides two styles of routers, one expects its actions to be injected, the
-// other, legacy style, accesses its actions statically.
-routesGenerator := InjectedRoutesGenerator
+  
+  
+  
